@@ -20,7 +20,7 @@
 ### mkdir
 * Create directories
 
-Sintax: `mkdir [options] directory_names`
+Syntax: `mkdir [options] directory_names`
 
 | Option | Description |
 |-|-|
@@ -41,7 +41,7 @@ mkdir -p dir1/dir2
 ### tee
 * Create and modify files
 
-Sintax: `tee [options] [files_list]`
+Syntax: `tee [options] [files_list]`
 
 | Option | Description |
 |-|-|
@@ -71,14 +71,14 @@ Appended text
 | `-i` | Ask for confirmation before overwriting files |
   
 ##### Rename
-Sintax: `mv [-i] <filename> <new_filename>`
+Syntax: `mv [-i] <filename> <new_filename>`
 
 ```bash
 mv file1 file2_newname
 ```
 
 ##### Move
-Sintax: `mv [-i] <files_list> <directory>`
+Syntax: `mv [-i] <files_list> <directory>`
 
 ```bash
 mv file1 file2 dir1
@@ -86,7 +86,7 @@ mv file1 file2 dir1
 
 
 
-### cp
+### cp
 * Copy files
 
 | Option | Description |
@@ -96,21 +96,21 @@ mv file1 file2 dir1
 | `-p` | Preserve the file attributes |
 
 ##### Copy file to file
-Sintax: `cp [-irp] <file1> <file2>`
+Syntax: `cp [-irp] <file1> <file2>`
 
 ```bash
 cp file1 file1_copy
 ```
 
 ##### Copy directory to directory
-Sintax: `cp [-irp] <dir1> <dir2>`
+Syntax: `cp [-irp] <dir1> <dir2>`
 
 ```bash
 cp -r dir1 dir1_copy
 ```
 
 ##### Copy list of files to directory
-Sintax: `cp [-irp] <files_list> <dir>`
+Syntax: `cp [-irp] <files_list> <dir>`
 
 ```bash
 cp file1 file2 dir1
@@ -123,7 +123,7 @@ cp file1 file2 dir1
 ### cat
 * Visualize the content of a file
 
-Sintax: `[files_list]`
+Syntax: `[files_list]`
 
 Visualize the content of `file1 and file2`
 ```bash
@@ -134,7 +134,7 @@ cat file1 file2
 ### more
 * Visualize the content of a file, page by page
 
-Sintax: `more [files_list]`
+Syntax: `more [files_list]`
 
 Visualize the content of `file1`, page by page
 ```bash
@@ -145,7 +145,7 @@ more file1
 ### tail
 * Prints the last N number of data from a file
 
-Sintax: `tail [-n_lines][+n_lines] [-c n_chars][-f] [files_list]`
+Syntax: `tail [-n_lines][+n_lines] [-c n_chars][-f] [files_list]`
 
 | Option | Description |
 |-|-|
@@ -178,7 +178,7 @@ tail -f file1
 ### Head
 * Prints the first N number of data from a file
 
-Sintax: `tail [-n_lines] [-c n_chars][-f] [files_list]`
+Syntax: `tail [-n_lines] [-c n_chars][-f] [files_list]`
 
 | Option | Description |
 |-|-|
