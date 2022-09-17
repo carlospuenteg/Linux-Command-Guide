@@ -19,6 +19,8 @@
 
 * [Others](#others)
   * [man](#man)
+  * [echo](#echo)
+  * [who](#who)
 
 # Commands
 
@@ -77,7 +79,7 @@ Appended text
 | `-i` | Ask for confirmation before overwriting files |
   
 ##### Rename
-Syntax: `mv [-i] <filename> <new_filename>`
+Syntax: `mv [-i] <filename/dirname> <new_filename/new_dirname>`
 
 ```bash
 mv file1 file2_newname
@@ -117,7 +119,7 @@ rm -ir dir1
 
 
 ### cp
-* Copy files
+* Create copy files (creates a new file or folder if needed)
 
 | Option | Description |
 |-|-|
@@ -158,6 +160,14 @@ Syntax: `[files_list]`
 Visualize the content of `file1 and file2`
 ```bash
 cat file1 file2
+```
+
+Write a file, like with `tee`: `cat > file1`
+```bash
+cat > file1
+Hello 
+World!
+^D
 ```
 
 
@@ -307,4 +317,57 @@ Syntax: `man [-k] command_name`
 Seach the `date` manual
 ```bash
 man date
+```
+
+
+### echo
+* Outputs the strings passed as arguments
+
+Syntax: echo [-ne] `<text>`
+
+| Option | Description |
+|-|-|
+| `-n` | Doesn't insert a line break after the text (next line starts in same line) |
+| `-e` | Activates the interpretation of backslash characters. The text must be between double quotes |
+
+Print `Hello World!`
+```bash
+echo "Hello World!"
+```
+
+Print `Hello World!` without line break
+```bash
+echo -n "Hello World!"
+```
+
+Print `Hello World!\nHello Again!` **without** backslash characters interpretation
+```bash
+echo "Hello World! \nHello Again!"
+
+Hello World! \nHello Again!
+```
+
+Print `Hello World!\nHello Again!` **with** backslash characters interpretation
+```bash
+echo -e "Hello World! \nHello Again!"
+
+Hello World! 
+Hello Again!
+
+```
+
+
+### who
+
+* Shows the users logged in the system and the time they logged in
+
+Syntax: `who [am i] [-q]`
+
+| Option | Description |
+|-|-|
+| `am i` | Shows the current user connected to the terminal|
+| `-q` | Shows the number of current users and their names|
+
+```bash
+who
 ```
