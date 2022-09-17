@@ -3,6 +3,8 @@
   * [mkdir](#mkdir)
   * [tee](#tee)
   * [mv](#mv)
+  * [cp](#cp)
+  * [rm](#rm)
 
 * [Open files](#open-files)
   * [cat](#cat)
@@ -11,8 +13,12 @@
   * [head](#head)
 
 * [Paths](#paths)
+  * [ls](#ls)
   * [pwd](#pwd)
   * [cd](#cd)
+
+* [Others](#others)
+  * [man](#man)
 
 # Commands
 
@@ -83,6 +89,30 @@ Syntax: `mv [-i] <files_list> <directory>`
 ```bash
 mv file1 file2 dir1
 ```
+
+
+
+### rm
+* Remove files
+
+Syntax: `rm [-ir] [files_list/directory]`
+
+| Option | Description |
+|-|-|
+| `-i` | Ask for confirmation before removing files |
+| `-r` | Remove directories and their contents recursively |
+
+Remove file `file1`
+```bash
+rm file1
+```
+
+Remove directory `dir1` and ask for confirmation
+```bash
+rm -ir dir1
+(answer "yes" to remove)
+```
+
 
 
 
@@ -226,4 +256,55 @@ cd ..
 Change it to the home directory
 ```bash
 cd
+```
+
+### ls
+* List the contents of a directory
+
+Syntax: `ls [-laRrtS] [directory_name] [filename]`
+
+| Option | Description |
+|-|-|
+| `-l` | List in long format (More info about the files) |
+| `-a` | List all files, including hidden files |
+| `-R` | List subdirectories recursively |
+| `-r` | Reverse alphabetical order |
+| `-t` | Sort by time modified |
+| `-S` | Sort by file size |
+
+`-l` info:
+* First column: file type
+  * `-`: Regular file
+  * `d`: Directory
+  * `C`: Special file in character mode
+  * `b`: Special file in block mode
+  * `l`: Symbolic link
+* Next 9 columns: file permissions
+  * Permissions for each type of users
+    * Columns 2-4: Owner
+    * Columns 5-7: Group
+    * Columns 8-10: Other users
+  * Permissions
+    * `r`: Read (cols 2, 5, 8)
+    * `w`: Write (cols 3, 6, 9)
+    * `x`: Execute (cols 4, 7, 10)
+  * `-`: No permission
+
+
+
+
+## Others
+
+### man
+* Shows the system's manual of a command
+
+Syntax: `man [-k] command_name`
+
+| Option | Description |
+|-|-|
+| `-k` | Search by keyword |
+
+Seach the `date` manual
+```bash
+man date
 ```
