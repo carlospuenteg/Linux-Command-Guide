@@ -1,26 +1,41 @@
 # Index
-* [Create/modify](#createmodify)
-  * [mkdir](#mkdir)
-  * [tee](#tee)
-  * [mv](#mv)
-  * [cp](#cp)
-  * [rm](#rm)
+* [Info](#info)
+* [Commands](#commands)
+  * [Create/modify](#createmodify)
+    * [mkdir](#mkdir)
+    * [tee](#tee)
+    * [mv](#mv)
+    * [cp](#cp)
+    * [rm](#rm)
 
-* [Open files](#open-files)
-  * [cat](#cat)
-  * [more](#more)
-  * [tail](#tail)
-  * [head](#head)
+  * [Open files](#open-files)
+    * [cat](#cat)
+    * [more](#more)
+    * [tail](#tail)
+    * [head](#head)
 
-* [Paths](#paths)
-  * [ls](#ls)
-  * [pwd](#pwd)
-  * [cd](#cd)
+  * [Paths](#paths)
+    * [ls](#ls)
+    * [pwd](#pwd)
+    * [cd](#cd)
 
-* [Others](#others)
-  * [man](#man)
-  * [echo](#echo)
-  * [who](#who)
+  * [Others](#others)
+    * [man](#man)
+    * [echo](#echo)
+    * [who](#who)
+    * [cal](#cal)
+    * [clear](#clear)
+    * [wc](#wc)
+    * [id](#id)
+    * [passwd](#passwd)
+    * [date](#date)
+
+
+
+# Info
+
+A file that starts with `.`, like `.file1` file will be hidden, but can be seen with `ls -la`
+
 
 # Commands
 
@@ -189,7 +204,7 @@ Syntax: `tail [-n_lines][+n_lines] [-c n_chars][-f] [files_list]`
 
 | Option | Description |
 |-|-|
-| `-n_lines` | return the last n_lines |
+| `-n_lines` | return the last n_lines (**Default 10**) |
 | `+n_lines` | return all lines except the first n_lines |
 | `-c n_chars` | return the last n_chars |
 | `-f` | follow the file (visualize changes in real time) |
@@ -222,7 +237,7 @@ Syntax: `tail [-n_lines] [-c n_chars][-f] [files_list]`
 
 | Option | Description |
 |-|-|
-| `-n_lines` | return the first n_lines |
+| `-n_lines` | return the first n_lines (**Default 10**) |
 | `-c n_chars` | return the first n_chars |
 
 Visualize the first 10 lines of `file1`
@@ -292,7 +307,7 @@ Syntax: `ls [-laRrtS] [directory_name] [filename]`
 * Next 9 columns: file permissions
   * Permissions for each type of users
     * Columns 2-4: Owner
-    * Columns 5-7: Group
+    * Columns 5-7: Members of the owner's **Group**
     * Columns 8-10: Other users
   * Permissions
     * `r`: Read (cols 2, 5, 8)
@@ -370,4 +385,87 @@ Syntax: `who [am i] [-q]`
 
 ```bash
 who
+```
+
+
+### cal
+
+* Shows a calendar
+
+Syntax: `cal [ [<month>] <year>]`
+
+| Option | Description |
+|-|-|
+| `<month>` | Month to show |
+| `<year>` | Year to show |
+
+Calendar of the current month
+```bash
+cal
+```
+
+Calendar of the year 2013
+```bash
+cal 2013
+```
+
+Calendar of the month of september of 2013
+```bash
+cal 9 2013
+```
+
+
+### clear
+
+* Clears the terminal
+
+```bash
+clear
+```
+
+
+
+### Visualize the number of words, lines and bytes of a file or of the standard input
+
+* Syntax: `wc [-cwlL] <files_list>`
+
+| Option | Description |
+|-|-|
+| `-c` | Number of bytes |
+| `-w` | Number of words |
+| `-l` | Number of lines |
+| `-L` | Length of the longest line in each file |
+
+```bash
+wc file1
+```
+
+
+
+### id
+
+* Shows the user's UID (User ID) and GID (Group ID)
+
+```bash
+id
+```
+
+
+
+### passwd
+
+* Changes the user's password to a new one
+
+```bash
+passwd
+```
+
+
+
+### date
+
+* Shows the current date and time
+
+```bash
+date
 ```
