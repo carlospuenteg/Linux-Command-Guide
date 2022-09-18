@@ -335,7 +335,7 @@ man date
 ```
 
 
-### echo
+### echo
 * Outputs the strings passed as arguments
 
 Syntax: echo [-ne] `<text>`
