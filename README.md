@@ -7,6 +7,7 @@
     * [mv](#mv)
     * [cp](#cp)
     * [rm](#rm)
+    * [touch](#touch)
 
   * [Open files](#open-files)
     * [cat](#cat)
@@ -18,6 +19,9 @@
     * [ls](#ls)
     * [pwd](#pwd)
     * [cd](#cd)
+
+  * [Text editors](#text-editors)
+    * [vim](#vim)
 
   * [Others](#others)
     * [man](#man)
@@ -94,7 +98,7 @@ Appended text
 | `-i` | Ask for confirmation before overwriting files |
   
 ##### Rename
-Syntax: `mv [-i] <filename/dirname> <new_filename/new_dirname>`
+Syntax: `mv [-i] <filename/dirname> <new_name>`
 
 ```bash
 mv file1 file2_newname
@@ -106,30 +110,6 @@ Syntax: `mv [-i] <files_list> <directory>`
 ```bash
 mv file1 file2 dir1
 ```
-
-
-
-### rm
-* Remove files
-
-Syntax: `rm [-ir] [files_list/directory]`
-
-| Option | Description |
-|-|-|
-| `-i` | Ask for confirmation before removing files |
-| `-r` | Remove directories and their contents recursively |
-
-Remove file `file1`
-```bash
-rm file1
-```
-
-Remove directory `dir1` and ask for confirmation
-```bash
-rm -ir dir1
-(answer "yes" to remove)
-```
-
 
 
 
@@ -162,6 +142,45 @@ Syntax: `cp [-irp] <files_list> <dir>`
 ```bash
 cp file1 file2 dir1
 ```
+
+
+
+### rm
+* Remove files
+
+Syntax: `rm [-ir] [files_list/directory]`
+
+| Option | Description |
+|-|-|
+| `-i` | Ask for confirmation before removing files |
+| `-r` | Remove directories and their contents recursively |
+
+Remove file `file1`
+```bash
+rm file1
+```
+
+Remove directory `dir1` and ask for confirmation
+```bash
+rm -ir dir1
+(answer "yes" to remove)
+```
+
+
+
+### touch
+* Create empty files
+
+Create file `file1`
+```bash
+touch file1
+```
+
+Update mdofification date on file2
+```bash
+touch file2
+```
+
 
 
 
@@ -247,41 +266,11 @@ head -10 file1
 
 Visualize the first 10 characters of `file1`
 ```bash
-tail -c10 file1
-```
-
-Visualize the last 10 lines of `file1` in real time
-```bash
-tail -f file1
+head -c10 file1
 ```
 
 
 ## Paths
-
-### pwd
-* Print the current working directory
-
-```bash
-pwd
-```
-
-### cd
-* Change the current working directory
-
-Change it to `dir1`
-```bash
-cd dir1
-```
-
-Change it to the parent directory
-```bash
-cd ..
-```
-
-Change it to the home directory
-```bash
-cd
-```
 
 ### ls
 * List the contents of a directory
@@ -315,7 +304,66 @@ Syntax: `ls [-laRrtS] [directory_name] [filename]`
     * `x`: Execute (cols 4, 7, 10)
   * `-`: No permission
 
+```bash
+$ ls -l
+total 3
+-rw-r--r-- ...
+drwxr-xr-x ...
+-rw-r--r-- ...
+```
 
+### pwd
+* Print the current working directory
+
+```bash
+pwd
+```
+
+### cd
+* Change the current working directory
+
+Change it to `dir1`
+```bash
+cd dir1
+```
+
+Change it to the parent directory
+```bash
+cd ..
+```
+
+Change it to the home directory
+```bash
+cd
+```
+
+
+
+## Text editors
+
+### vim
+
+Syntax: `vim [+start-line][filename]`
+
+| Option | Description |
+|-|-|
+| `+start-line` | Start vim in the line `start-line` (`$` means last line) |
+
+If you execute: `vim ...`, you'll open the file in `edit mode`.
+
+To go to `command mode` (`modo orden`), press `ESC`.
+
+##### Comands in command mode (modo orden)
+
+To insert text, press <kbd>i</kbd>
+
+| Comando | Descripción |
+|-|-|
+| `:q` | Quit |
+| `:h`/`:help` | Open help mode |
+| `:q!` | Quit help mode |
+| `:w` | Save |
+| `:wq` | Save and quit |
 
 
 ## Others
@@ -335,7 +383,7 @@ man date
 ```
 
 
-### echo
+### echo
 * Outputs the strings passed as arguments
 
 Syntax: echo [-ne] `<text>`
